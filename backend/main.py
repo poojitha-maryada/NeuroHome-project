@@ -7,7 +7,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from tensorflow.keras.models import load_model
 
-MODEL_PATH = Path(r"C:\Users\pooji\OneDrive\Desktop\backend\models\p300_best_eegnet_fixed.keras")
+MODEL_PATH = Path(__file__).resolve().parent / "models" / "p300_best_eegnet_fixed.keras"
 THRESHOLD = 0.40
 DECISION_WINDOW_SEC = 1.5
 # The model Target probability is the single confidence/percentage score used by the novelty.
